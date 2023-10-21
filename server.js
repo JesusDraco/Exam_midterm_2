@@ -1,44 +1,78 @@
-let currentHeroIndex = 0;
+const express = require('express');
+const axios = require('axios');
+const app = express();
+app.use(express.json());
 
-fetch('https://akabab.github.io/superhero-api/api/all.json')
-    .then(response => response.json())
-    .then(data => {
-        updateHeroCard(data[currentHeroIndex]);
+app.use(express.static('Public')); 
 
-        document.getElementById('prevButton').addEventListener('click', () => {
-            currentHeroIndex--;
-            if (currentHeroIndex < 0) {
-                currentHeroIndex = data.length - 1; // Si estamos en el primer superhéroe, vamos al último
-            }
-            updateHeroCard(data[currentHeroIndex]);
-        });
+app.get('/', function (req, res) {
+    res.sendFile(__dirname + '/Public/index.html');
+});
 
-        document.getElementById('nextButton').addEventListener('click', () => {
-            currentHeroIndex++;
-            if (currentHeroIndex >= data.length) {
-                currentHeroIndex = 0; // Si estamos en el último superhéroe, volvemos al primero
-            }
-            updateHeroCard(data[currentHeroIndex]);
-        });
+app.get('/hero/:id', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/id/${req.params.id}.json`);
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send('Error al obtener el superhéroe');
+    }
+});
 
-        document.getElementById('searchButton').addEventListener('click', () => {
-            const searchQuery = document.getElementById('searchInput').value;
-            const foundHero = data.find(hero => hero.name.toLowerCase() === searchQuery.toLowerCase());
+app.get('/search/:name', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/all.json`);
+        const heroes = response.data.filter(hero => hero.name.toLowerCase().includes(req.params.name.toLowerCase()));
+        res.send(heroes);
+    } catch (error) {
+        res.status(500).send('Error al buscar el superhéroe');
+    }
+});
 
-            if (foundHero) {
-                updateHeroCard(foundHero);
-            } else {
-                alert('Superhero not found');
-            }
-        });
-    });
+app.get('/powerstats/:id', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/powerstats/${req.params.id}.json`);
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send('Error al obtener las estadísticas de poder del superhéroe');
+    }
+});
 
-function updateHeroCard(hero) {
-    const heroContainer = document.getElementById('hero-container');
-    heroContainer.innerHTML = `
-    <h2>${hero.name}</h2>
-    <img src="${hero.images.md}" alt="${hero.name}">
-    <p>${hero.biography.fullName}</p>
-    // Agrega aquí más detalles
-  `;
-}
+app.get('/appearance/:id', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/appearance/${req.params.id}.json`);
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send('Error al obtener la apariencia del superhéroe');
+    }
+});
+
+app.get('/biography/:id', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/biography/${req.params.id}.json`);
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send('Error al obtener la biografía del superhéroe');
+    }
+});
+
+app.get('/connections/:id', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/connections/${req.params.id}.json`);
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send('Error al obtener las conexiones del superhéroe');
+    }
+});
+
+app.get('/work/:id', async (req, res) => {
+    try {
+        const response = await axios.get(`https://akabab.github.io/superhero-api/api/work/${req.params.id}.json`);
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send('Error al obtener la información de trabajo del superhéroe');
+    }
+});
+
+
+
+app.listen(3000, () => console.log('Servidor corriendo en http://localhost:3000'));

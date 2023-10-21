@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Superhero Pedia</title>
+    <style>
+     
+    </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h1>Superhero Pedia</h1>
+
+    <div id="search">
+        <input type="text" id="searchInput" placeholder="Buscar superhéroe...">
+        <button onclick="searchHero()">Buscar</button>
+    </div>
+
+    <div id="heroInfo">
+        <!-- La información del superhéroe se mostrará aquí -->
+    </div>
+
+    <div id="powerStats">
+        <!-- Las estadísticas de poder se mostrarán aquí -->
+    </div>
+
+    <div id="appearance">
+        <!-- La apariencia se mostrará aquí -->
+    </div>
+
+    <div id="biography">
+        <!-- La biografía se mostrará aquí -->
+    </div>
+
+    <div id="connections">
+        <!-- Las conexiones se mostrarán aquí -->
+    </div>
+
+    <div id="work">
+        <!-- La información de trabajo se mostrará aquí -->
+    </div>
+
+
+    <button onclick="previousHero()">Anterior</button>
+    <button onclick="nextHero()">Siguiente</button>
+
+    <script src="hero.js"></script>
+</body>
+
+</html>
