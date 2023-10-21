@@ -9,6 +9,7 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/Public/index.html');
 });
 
+
 app.get('/hero/:id', async (req, res) => {
     try {
         const response = await axios.get(`https://akabab.github.io/superhero-api/api/id/${req.params.id}.json`);
