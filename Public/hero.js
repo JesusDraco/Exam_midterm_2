@@ -137,9 +137,8 @@ function displayWork(work) {
 function displayHero(hero) {
     const heroInfoDiv = document.getElementById('heroInfo');
     heroInfoDiv.innerHTML = `
-        <h2>${hero.name}</h2>
-        <img src="${hero.images.lg}" alt="${hero.name}">
-        <!-- Añade aquí más información sobre el superhéroe -->
+        <h2 id="heroName">${hero.name}</h2>
+        <img id="heroImage" src="${hero.images.lg}" alt="${hero.name}">
     `;
     getPowerStats(hero.id);
     getAppearance(hero.id);

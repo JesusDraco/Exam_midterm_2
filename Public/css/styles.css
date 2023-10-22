@@ -5,3 +5,15 @@
     margin: 10px;
 
 }
+
+#heroImage {
+    max-width: 300px;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    
+}
+
+#heroName {
+    color: aqua;
+
+}
