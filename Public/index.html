@@ -3,20 +3,23 @@
 
 <head>
     <title>Superhero Pedia</title>
-    <style>
-     
-    </style>
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <h1>Superhero Pedia</h1>
-
-    <div id="search">
-        <input type="text" id="searchInput" placeholder="Buscar superhéroe...">
-        <button onclick="searchHero()">Buscar</button>
+    <div id="titulo">
+    <h1>Superhero - Pedia</h1>
     </div>
+    <div id="search" class="search-container">
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar superhéroe...">
+        <button onclick="searchHero()" class="search-button">Buscar</button>
+    </div>
+    
+    <hr>
+    <hr>
+    <hr>
 
     <div id="heroInfo">
         <!-- La información del superhéroe se mostrará aquí -->
@@ -25,28 +28,32 @@
     <div id="powerStats">
         <!-- Las estadísticas de poder se mostrarán aquí -->
     </div>
-
+<hr>
     <div id="appearance">
         <!-- La apariencia se mostrará aquí -->
     </div>
-
+<hr>
     <div id="biography">
         <!-- La biografía se mostrará aquí -->
     </div>
-
+<hr>
     <div id="connections">
         <!-- Las conexiones se mostrarán aquí -->
     </div>
-
+<hr id="invisible">
     <div id="work">
         <!-- La información de trabajo se mostrará aquí -->
     </div>
 
+<hr id="invisible">
 
-    <button onclick="previousHero()">Anterior</button>
-    <button onclick="nextHero()">Siguiente</button>
+    <button class="custom-button" onclick="previousHero()"><strong>Anterior</strong></button>
+    <button class="custom-button" onclick="nextHero()"><strong>Siguiente</strong></button>
+    
+    
 
-    <script src="hero.js"></script>
+<script src="hero.js"></script>
+
 </body>
 
 </html>

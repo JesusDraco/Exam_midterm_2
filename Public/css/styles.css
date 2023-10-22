@@ -1,8 +1,56 @@
+body{
+    background-color: black;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #2765a0;
+}
+
+
+h1{
+    color: red;
+    font-family: 'Arial', sans-serif; 
+    font-size: 36px; 
+    color: #FF5733; 
+    text-align: center; 
+    text-transform: uppercase; 
+    margin: 0; 
+    padding: 20px 0; 
+    background-color: #333; 
+    letter-spacing: 2px; 
+}
+
+
 #heroInfo{
-    background-color: blueviolet;
+    background-color: rgb(77, 76, 125);
     border: 1px solid #ccc;
     padding: 10px;
     margin: 10px;
+    width: 300px;
 
 }
 
@@ -10,10 +58,191 @@
     max-width: 300px;
     border: 2px solid #ff0000;
     border-radius: 10px;
+    flex: 0 0 30%; 
+
     
 }
 
 #heroName {
-    color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    color: black;
+    padding-left: 90px;
 
 }
+
+
+#fondo{
+    display: flex;
+    background-color: rgb(249, 148, 23);
+}
+
+
+
+
+#powerStats{
+    display: flex;
+    border-radius: 10px;
+    color: white;    
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    width: 700px;
+}
+
+#appearance{
+    border-radius: 10px;
+    color: white;    
+    position: absolute;
+    top: 350px;
+    left: 400px;
+    width: 700px;
+    display: flex;
+}
+
+#biography{
+    border-radius: 10px;
+    color: white;    
+    position: absolute;
+    top: 400px;
+    left: 400px;
+    width: 700px;
+    display: flex;
+}
+#connections{
+    border-radius: 10px;
+    color: white;    
+    position: absolute;
+    top: 500px;
+    left: 400px;
+    width: 700px;
+    display: flex;
+}
+
+#work{
+    border-radius: 10px;
+    color: white;    
+    position: absolute;
+    top: 660px;
+    left: 400px;
+    width: 700px;
+    display: flex;
+}
+
+/* Estilo para las líneas horizontales */
+hr {
+    border: none; 
+    height: 6px; 
+    background: linear-gradient(90deg, #610C9F, #940B92, #DA0C81); /* Patrón de colores en forma de degradado */
+    margin: 20px 0; 
+}
+
+#invisible{
+    display: none;
+}
+
+/* Estilo al pasar el mouse por las líneas horizontales */
+hr:hover {
+    background: linear-gradient(90deg, #FFC300, #FF5733, #FFC300); 
+}
+
+
+.custom-button {
+    background-color: #3498db; 
+    color: #ccc; 
+    padding: 20px 40px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin: 5px; 
+    font-size: 16px; 
+    transition: background-color 0.3s, color 0.3s; 
+    justify-content: center; 
+
+    
+}
+
+.custom-button:hover {
+    background-color: #2765a0; 
+    color: white;
+}
+
+
+@media screen and (max-width: 1150px) {
+
+
+    h1{
+        font-size: 60px; 
+        height: 90px;
+    }
+
+    #heroInfo {
+        width: auto; 
+        margin: 0 auto;  
+        position: static;  
+        left: 50%;
+        
+    }
+
+    #heroName {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 50px;
+        color: black;
+        padding-left: 80px;
+    
+    }
+
+    #heroImage {
+        width: 50%; 
+        margin: 0 auto; 
+    }
+
+    
+    #powerStats,
+    #appearance,
+    #biography,
+    #connections,
+    #work {
+        border-radius: 10px;
+        color: white;    
+        position: initial;
+        top: initial;
+        left: initial;
+        width: initial;
+        display: initial;
+        font-size: 50px;
+        
+    }
+    #invisible{
+        display: block;
+    }
+
+    .search-container {
+        height: 100px;
+    }
+    
+    .search-input {
+        font-size: 40px;
+        height: 90px;
+    }
+    
+    .search-button {
+
+        font-size: 30px;
+        height: 80px;
+
+    }
+
+
+    .custom-button {
+
+        margin: 50px; 
+        font-size: 40px; 
+
+    
+        
+    }
+    
+}
+
+
